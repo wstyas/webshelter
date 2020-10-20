@@ -82,30 +82,30 @@
             ?>
             <div class="pagination-wrap">           
               <nav class="pagination right clear">
-                <?php if(get('id_berita')) { if($page == 1) echo ""; else {?>
-                    <a href="?p=berita&id_berita=<?php echo get('id_berita'); ?>&halaman=1"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="?p=berita&id_berita=<?php echo get('id_berita'); ?>&halaman=<?php echo get('halaman')-1; ?>"><i class="fa fa-angle-left"></i></a>
-                <?php } } else { if($page == 1) echo ""; else {?>
+                <?php if(get('id_berita')) { if($page == 1) print_r(""); else {?>
+                    <a href="?p=berita&id_berita=<?php print_r(get('id_berita')); ?>&halaman=1"><i class="fa fa-angle-double-left"></i></a>
+                    <a href="?p=berita&id_berita=<?php print_r(get('id_berita')); ?>&halaman=<?php print_r(get('halaman')-1); ?>"><i class="fa fa-angle-left"></i></a>
+                <?php } } else { if($page == 1) print_r(""); else {?>
                     <a href="?p=berita&halaman=1"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="?p=berita&halaman=<?php echo get('halaman')-1; ?>"><i class="fa fa-angle-left"></i></a>
+                    <a href="?p=berita&halaman=<?php print_r(get('halaman')-1); ?>"><i class="fa fa-angle-left"></i></a>
                 <?php 
                     } }
                     if(get('id_berita')){ 
                         for ($i=1; $i<=$pages ; $i++){
                 ?>
-                    <a href="?p=berita&id_berita=<?php echo get('id_berita'); ?>&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
+                    <a href="?p=berita&id_berita=<?php print_r(get('id_berita')); ?>&halaman=<?php print_r($i); ?>" class="<?php if($i==$page) print_r('page-numbers current'); ?>"><?php print_r($i); ?></a>
                 <?php } } else { 
                     for ($i=1; $i<=$pages ; $i++){
                 ?>
-                    <a href="?p=berita&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
+                    <a href="?p=berita&halaman=<?php print_r($i); ?>" class="<?php if($i==$page) print_r('page-numbers current'); ?>"><?php print_r($i); ?></a>
                 <?php } } ?>
 
-                <?php if(get('id_berita')) { if($page == $pages) echo ""; else {?>
-                    <a href="?p=berita&id_berita=<?php echo get('id_berita'); ?>&halaman=<?php echo get('halaman')+1; ?>"><i class="fa fa-angle-right"></i></a>
-                    <a href="?p=berita&id_berita<?php echo get('id_berita'); ?>&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
-                <?php } } else { if($page == $pages) echo ""; else {?>
-                    <a href="?p=berita&halaman=<?php echo get('halaman')+1; ?>"><i class="fa fa-angle-right"></i></a>
-                    <a href="?p=berita&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
+                <?php if(get('id_berita')) { if($page == $pages) print_r(""); else {?>
+                    <a href="?p=berita&id_berita=<?php print_r(get('id_berita')); ?>&halaman=<?php print_r(get('halaman')+1); ?>"><i class="fa fa-angle-right"></i></a>
+                    <a href="?p=berita&id_berita<?php print_r(get('id_berita')); ?>&halaman=<?php print_r($pages); ?>"><i class="fa fa-angle-double-right"></i></a>
+                <?php } } else { if($page == $pages) print_r(""); else {?>
+                    <a href="?p=berita&halaman=<?php print_r(get('halaman')+1); ?>"><i class="fa fa-angle-right"></i></a>
+                    <a href="?p=berita&halaman=<?php print_r($pages); ?>"><i class="fa fa-angle-double-right"></i></a>
                 <?php } } ?>
               </nav>
             </div>
