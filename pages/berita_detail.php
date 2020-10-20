@@ -16,7 +16,7 @@
           <a href="?p=berita&halaman=1">Berita</a>
         </li>
         <li class="active">
-          <?php echo $row['judul_berita']; ?>
+          <?php print_r($row->$judul_berita); ?>
         </li>
       </ol> <!-- end breadcrumbs -->
     </div>
@@ -31,8 +31,8 @@
             <div class="flickity  mfp-hover" id="gallery-main">
 
               <div class="gallery-cell">
-                <a href="admins/uploads/berita/<?php echo $row['foto']; ?>" class="lightbox-img">
-                  <img src="admins/uploads/berita/<?php echo $row['foto']; ?>" alt="" />
+                <a href="admins/uploads/berita/<?php print_r($row->$foto); ?>" class="lightbox-img">
+                  <img src="admins/uploads/berita/<?php print_r($row->$foto); ?>" alt="" />
                 </a>
               </div>
               
@@ -41,8 +41,8 @@
           </div> <!-- end col img slider -->
 
           <div class="col-sm-6 col-xs-12 product-description-wrap">
-            <h1 class="product-title"><?php echo $row['judul_berita']; ?></h1>
-            <p class="product-title"><?php echo $row['tanggal']; ?></p>
+            <h1 class="product-title"><?php print_r($row->$judul_berita); ?></h1>
+            <p class="product-title"><?php print_r($row->$tanggal); ?></p>
 
             <div class="product_meta">
                 <!-- tabs -->
