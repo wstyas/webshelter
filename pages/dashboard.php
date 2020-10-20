@@ -1,5 +1,5 @@
 <?php 
-  if(!isset($_GET['cari'])){ 
+  if(!get('cari')){ 
    
     $new = "SELECT id_berita, judul_berita, foto FROM berita ORDER BY id_berita DESC LIMIT 4";
     $best = "SELECT id_foto, keterangan_foto, foto FROM galeri ORDER BY id_foto DESC LIMIT 4";
