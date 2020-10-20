@@ -43,12 +43,12 @@
                     <div class="product-item">
                         <div class="product-img">
                         <a href="#">
-                            <img src="admins/uploads/partner/<?php echo $row['foto']; ?>" alt="" style="height:350px; width: auto;">
-                            <img src="admins/uploads/partner/<?php echo $row['foto']; ?>" alt="" class="back-img">
+                            <img src="admins/uploads/partner/<?php print_r($row->$foto); ?>" alt="" style="height:350px; width: auto;">
+                            <img src="admins/uploads/partner/<?php print_r($row->$foto); ?>" alt="" class="back-img">
                         </a>
                         </div>
                              <div class="product-details">
-                        <h3 title="<?php $row['nama_partner']; ?>" class="product-title" href="?p=partner_detail&id_partner=<?php echo $row['id_partner']; ?>"><b><?php echo substr($row['nama_partner'], 0, 35); if(strlen($row['nama_partner'])>35) echo  "..." ?></b>
+                        <h3 title="<?php $row->$nama_partner; ?>" class="product-title" href="?p=partner_detail&id_partner=<?php print_r($row->$id_partner); ?>"><b><?php echo substr($row->$nama_partner, 0, 35); if(strlen($row->$nama_partner)>35) echo  "..." ?></b>
                         </h3>
                         </div>
                     </div>
