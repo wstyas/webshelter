@@ -60,14 +60,14 @@
                     <div class="product-item">
                         <div class="product-img">
                         <a href="#">
-                            <img src="admins/uploads/berita/<?php echo $row['foto']; ?>" alt="" style="height:300px; width:300px;">
-                            <img src="admins/uploads/berita/<?php echo $row['foto']; ?>" alt="" class="back-img">
+                            <img src="admins/uploads/berita/<?php print_r($row->$foto); ?>" alt="" style="height:300px; width:300px;">
+                            <img src="admins/uploads/berita/<?php print_r($row->$foto); ?>" alt="" class="back-img">
                         </a>
-                        <a href="?p=berita_detail&id_berita=<?php echo $row['id_berita']; ?>" class="product-quickview">Baca Selengkapnya</a>
+                        <a href="?p=berita_detail&id_berita=<?php print_r($row->$id_berita); ?>" class="product-quickview">Baca Selengkapnya</a>
                         </div>
                         <div class="product-details">
                         <h3>
-                            <a title="<?php $row['judul_berita']; ?>" class="product-title" href="?p=berita_detail&id_berita=<?php echo $row['id_berita']; ?>"><b><?php echo substr($row['judul_berita'], 0, 35); if(strlen($row['judul_berita'])>35) echo  "..." ?></b></a>
+                            <a title="<?php $row['judul_berita']; ?>" class="product-title" href="?p=berita_detail&id_berita=<?php print_r($row->$id_berita); ?>"><b><?php echo substr($row['judul_berita'], 0, 35); if(strlen($row['judul_berita'])>35) echo  "..." ?></b></a>
                         </h3>
                         </div>
                     </div>
@@ -127,9 +127,9 @@
                 ?>
                     <ul class="product-list-widget">
                     <li class="clearfix">
-                        <a href="?p=berita_detail&id_berita=<?php echo $row['id_berita']; ?>">
-                     <img src="admins/uploads/berita/<?php echo $row['foto']; ?>">
-                        <span class="product-title"><?php echo $row['judul_berita']; ?></span>
+                        <a href="?p=berita_detail&id_berita=<?php print_r($row->$id_berita); ?>">
+                     <img src="admins/uploads/berita/<?php print_r($row->$foto); ?>">
+                        <span class="product-title"><?php print_r($row->$judul_berita); ?></span>
                         </a>
                     </li>               
                     </ul>
