@@ -9,25 +9,25 @@
               <div class="row row-10">
               <?php
                 $bukuAll = "SELECT id_partner FROM partner";
-                $rsBukuAll = mysqli_query($konek, $bukuAll);
+                $rsBukuAll = mysqli->query($konek, $bukuAll);
                 $halaman = 6;
                 $page = get('halaman') ? (int)get('halaman') : 1;
                 $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
                 if(get('id_partner')){
                     $id_foto = get('id_partner');
-                    $result = mysqli_query($konek,"SELECT * FROM partner");
+                    $result = mysqli->query($konek,"SELECT * FROM partner");
                 } else 
-                    $result = mysqli_query($konek,"SELECT * FROM partner");
-                $total = mysqli_num_rows($result);
+                    $result = mysqli->query($konek,"SELECT * FROM partner");
+                $total = mysqli->num_rows($result);
                 $pages = ceil($total/$halaman);
                 if(get('id_partner')){
                     $buku = "SELECT id_partner, nama_partner, foto FROM partner ORDER BY id_partner DESC LIMIT $mulai, $halaman";
                 }
                 else    
                     $buku = "SELECT id_partner, nama_partner, foto FROM partner ORDER BY id_partner DESC LIMIT $mulai, $halaman";
-                $rs = mysqli_query($konek, $buku);
+                $rs = mysqli->query($konek, $buku);
                 $no =$mulai+1;
-                $data = mysqli_num_rows($rs);
+                $data = mysqli->num_rows($rs);
                 if($data==0){
               ?>
               <div class="col-md-12 col-xs-12">
@@ -37,7 +37,7 @@
               </div>
               <?php   
                 } else {
-                    while($row=mysqli_fetch_assoc($rs)){
+                    while($row=mysqli->fetch_assoc($rs)){
               ?>
                     <div class="col-md-4 col-xs-12">
                     <div class="product-item">

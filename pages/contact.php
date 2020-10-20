@@ -1,7 +1,7 @@
 <?php
 $queryProduct = "SELECT * FROM kontak";
     $rsProduct = mysqli->query($konek, $queryProduct);
-    $row = mysqli_fetch_assoc($rsProduct);
+    $row = mysqli->fetch_assoc($rsProduct);
 ?>
 <!-- Breadcrumbs -->
     <div class="container">

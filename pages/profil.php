@@ -1,10 +1,10 @@
  <?php
   // $kode_profil = $_GET['kode_profil'];
     $queryProduct = "SELECT isi_profil FROM profil";
-    $rsProduct = mysqli_query($konek, $queryProduct);
-    $row = mysqli_fetch_assoc($rsProduct);
+    $rsProduct = mysqli->query($konek, $queryProduct);
+    $row = mysqli->fetch_assoc($rsProduct);
   //  $queryKomentar = "SELECT * FROM tb_komentar WHERE id_buku=$id_buku ORDER BY id_komentar DESC";
-   // $rsKomentar = mysqli_query($konek, $queryKomentar);
+   // $rsKomentar = mysqli->query($konek, $queryKomentar);
 ?>
     <!-- About us -->
     <section class="section-wrap about-us pb-60">

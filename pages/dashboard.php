@@ -4,13 +4,13 @@
     $new = "SELECT id_berita, judul_berita, foto FROM berita ORDER BY id_berita DESC LIMIT 4";
     $best = "SELECT id_foto, keterangan_foto, foto FROM galeri ORDER BY id_foto DESC LIMIT 4";
     $partner = "SELECT id_partner, nama_partner, foto FROM partner ORDER BY id_partner DESC LIMIT 4";
-    $rsNew = mysqli_query($konek, $new);
-    $rsBest = mysqli_query($konek, $best);
-    $rsPartner = mysqli_query($konek, $partner);
+    $rsNew = mysqli->query($konek, $new);
+    $rsBest = mysqli->query($konek, $best);
+    $rsPartner = mysqli->query($konek, $partner);
 
     $queryProduct = "SELECT isi_profil FROM profil";
-    $rsProduct = mysqli_query($konek, $queryProduct);
-    $row = mysqli_fetch_assoc($rsProduct);
+    $rsProduct = mysqli->query($konek, $queryProduct);
+    $row = mysqli->fetch_assoc($rsProduct);
 ?>
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -44,7 +44,7 @@
         </div>
 
         <div class="row row-10">              
-          <?php while($row=mysqli_fetch_assoc($rsNew)){ ?>
+          <?php while($row=mysqli->fetch_assoc($rsNew)){ ?>
             <div class="col-md-3 col-xs-12 animated-from-left">
               <div class="product-item">
                 <div class="product-img">
@@ -78,7 +78,7 @@
 
         <div class="row row-10">              
 
-          <?php while($row=mysqli_fetch_assoc($rsBest)){ ?>
+          <?php while($row=mysqli->fetch_assoc($rsBest)){ ?>
             <div class="col-md-3 col-xs-12 animated-from-left">
               <div class="product-item">
                 <div class="product-img">
@@ -111,7 +111,7 @@
 
         <div class="row row-10">              
 
-          <?php while($row=mysqli_fetch_assoc($rsPartner)){ ?>
+          <?php while($row=mysqli->fetch_assoc($rsPartner)){ ?>
             <div class="col-md-3 col-xs-12 animated-from-left">
               <div class="product-item">
                 <div class="product-img">
