@@ -67,7 +67,7 @@
                         </div>
                         <div class="product-details">
                         <h3>
-                            <a title="<?php $row->$judul_ berita; ?>" class="product-title" href="?p=berita_detail&id_berita=<?php print_r($row->$id_berita); ?>"><b><?php echo substr($row->$judul_berita, 0, 35); if(strlen($row->$judul_berita)>35) echo  "..." ?></b></a>
+                            <a title="<?php $row->$judul_ berita; ?>" class="product-title" href="?p=berita_detail&id_berita=<?php print_r($row->$id_berita); ?>"><b><?php print_r(substr($row->$judul_berita, 0, 35)); if(strlen($row->$judul_berita)>35) print_r(  "...") ?></b></a>
                         </h3>
                         </div>
                     </div>
