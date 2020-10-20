@@ -49,7 +49,7 @@
                         </a>
                         </div>
                              <div class="product-details">
-                        <h3 title="<?php $row['keterangan_foto']; ?>" class="product-title" href="?p=berita_detail&id_foto=<?php print_r($row->$id_foto); ?>"><b><?php echo substr($row['keterangan_foto'], 0, 35); if(strlen($row['keterangan_foto'])>35) echo  "..." ?></b>
+                        <h3 title="<?php $row['keterangan_foto']; ?>" class="product-title" href="?p=berita_detail&id_foto=<?php print_r($row->$id_foto); ?>"><b><?php print_r(substr($row->$keterangan_foto)), 0, 35); if(strlen($row['keterangan_foto'])>35) print_r("...") ?></b>
                         </h3>
                         </div>
                     </div>
@@ -64,30 +64,30 @@
             ?>
             <div class="pagination-wrap">           
               <nav class="pagination right clear">
-                <?php if(get('id_foto')) { if($page == 1) echo ""; else {?>
-                    <a href="?p=galeri&id_foto=<?php echo get('id_foto'); ?>&halaman=1"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="?p=galeri&id_foto=<?php echo get('id_foto'); ?>&halaman=<?php echo get('halaman')-1; ?>"><i class="fa fa-angle-left"></i></a>
-                <?php } } else { if($page == 1) echo ""; else {?>
+                <?php if(get('id_foto')) { if($page == 1) print_r(""); else {?>
+                    <a href="?p=galeri&id_foto=<?php print_r(get('id_foto')); ?>&halaman=1"><i class="fa fa-angle-double-left"></i></a>
+                    <a href="?p=galeri&id_foto=<?php print_r(get('id_foto')); ?>&halaman=<?php print_r(get('halaman')-1); ?>"><i class="fa fa-angle-left"></i></a>
+                <?php } } else { if($page == 1) print_r(""); else {?>
                     <a href="?p=galeri&halaman=1"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="?p=galeri&halaman=<?php echo get('halaman')-1; ?>"><i class="fa fa-angle-left"></i></a>
+                    <a href="?p=galeri&halaman=<?php print_r(get('halaman')-1); ?>"><i class="fa fa-angle-left"></i></a>
                 <?php 
                     } }
                     if(get('id_foto')){ 
                         for ($i=1; $i<=$pages ; $i++){
                 ?>
-                    <a href="?p=galeri&id_foto=<?php echo get('id_foto'); ?>&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
+                    <a href="?p=galeri&id_foto=<?php print_r(get('id_foto')); ?>&halaman=<?php print_r($i); ?>" class="<?php if($i==$page) print_r('page-numbers current'); ?>"><?php print_r($i); ?></a>
                 <?php } } else { 
                     for ($i=1; $i<=$pages ; $i++){
                 ?>
-                    <a href="?p=galeri&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
+                    <a href="?p=galeri&halaman=<?php print_r($i); ?>" class="<?php if($i==$page) print_r('page-numbers current'); ?>"><?php print_r($i); ?></a>
                 <?php } } ?>
 
-                <?php if(get('id_foto')) { if($page == $pages) echo ""; else {?>
-                    <a href="?p=galeri&id_foto=<?php echo get('id_foto'); ?>&halaman=<?php echo get('halaman')+1; ?>"><i class="fa fa-angle-right"></i></a>
-                    <a href="?p=galeri&id_foto<?php echo get('id_foto'); ?>&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
-                <?php } } else { if($page == $pages) echo ""; else {?>
-                    <a href="?p=galeri&halaman=<?php echo get('halaman')+1; ?>"><i class="fa fa-angle-right"></i></a>
-                    <a href="?p=galeri&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
+                <?php if(get('id_foto')) { if($page == $pages) print_r(""); else {?>
+                    <a href="?p=galeri&id_foto=<?php print_r(get('id_foto')); ?>&halaman=<?php print_r(get('halaman')+1); ?>"><i class="fa fa-angle-right"></i></a>
+                    <a href="?p=galeri&id_foto<?php print_r(get('id_foto')); ?>&halaman=<?php print_r($pages); ?>"><i class="fa fa-angle-double-right"></i></a>
+                <?php } } else { if($page == $pages) print_r(""); else {?>
+                    <a href="?p=galeri&halaman=<?php print_r(get('halaman')+1); ?>"><i class="fa fa-angle-right"></i></a>
+                    <a href="?p=galeri&halaman=<?php print_r($pages); ?>"><i class="fa fa-angle-double-right"></i></a>
                 <?php } } ?>
               </nav>
             </div>
