@@ -5,8 +5,8 @@
     $pass = "";
     $dbName = "web";
 
-    $konek = mysqli_connect($host,$user,$pass);
+    $konek = mysqli->connect($host,$user,$pass);
     if(!$konek)
         $this("Gagal koneksi...");
 
-    $hasil = mysqli_select_db($konek,$dbName);
+    $hasil = mysqli->select_db($konek,$dbName);
