@@ -31,7 +31,7 @@ $queryProduct = "SELECT * FROM kontak";
               <div class="widget footer-get-in-touch">
                 <h5 class="widget-title uppercase">Kontak</h5>
                 <address class="footer-address"><span>Alamat:</span> <?php print_r($row->$alamat); ?></address>
-                <p>No. HP (WhatsApp): <a><?php print_r($row->$whatsapp); ?></a></p>
+                <p>No. HP (WhatsApp): <a><?php $this($row->$whatsapp); ?></a></p>
                 <p>Email: <a> <?php print_r($row->$email); ?></a></p>
               </div>
             </div> <!-- end stay in touch -->           
