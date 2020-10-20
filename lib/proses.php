@@ -1,5 +1,5 @@
 <?php
-    set_include_path("koneksi.php");
+    include_path("koneksi.php");
     if(post('komentar')){
         $id_buku=post('id_buku');
         $nama=mysqli->real_escape_string($konek, post('nama'));
