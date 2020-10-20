@@ -1,5 +1,5 @@
 <?php 
-  include_once "lib/koneksi.php";
+  require "lib/koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
