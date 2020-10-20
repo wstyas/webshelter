@@ -60,7 +60,7 @@
                         
                         <div class="tab-pane fade in active" id="tab-description">
                         <p align="justify">
-                            <?php echo htmlspecialchars_decode(stripcslashes($row['isi_berita'])); ?>
+                            <?php print_r(htmlspecialchars_decode(stripcslashes($row->$isi_berita))); ?>
                         </p>
                         </div>
                     
