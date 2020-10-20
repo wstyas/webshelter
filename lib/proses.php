@@ -9,9 +9,9 @@
         $query = "INSERT INTO tb_komentar VALUES(NULL, $id_buku, '$nama', '$isi', 0, '$tgl')";
         $hasil = mysqli->query($konek, $query);
         if ($hasil)
-            header('location: ../index.php?p=buku_detail&id_buku='.$id_buku.'&a=komentar_sukses');
+            href('location: ../index.php?p=buku_detail&id_buku='.$id_buku.'&a=komentar_sukses');
         else
-            header('location: ../index.php?p=buku_detail&id_buku='.$id_buku.'&a=komentar_gagal');
+            href('location: ../index.php?p=buku_detail&id_buku='.$id_buku.'&a=komentar_gagal');
             // print_r("Gagal");
 
     }
