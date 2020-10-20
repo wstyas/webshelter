@@ -28,16 +28,16 @@
                 $bukuAll = "SELECT id_berita FROM berita";
                 $rsBukuAll = mysqli_query($konek, $bukuAll);
                 $halaman = 6;
-                $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
+                $page = get('halaman') ? (int)get('halaman') : 1;
                 $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
-                if(isset($_GET['id_berita'])){
-                    $id_berita = $_GET['id_berita'];
+                if(get('id_berita')){
+                    $id_berita = get('id_berita');
                     $result = mysqli_query($konek,"SELECT * FROM berita");
                 } else 
                     $result = mysqli_query($konek,"SELECT * FROM berita");
                 $total = mysqli_num_rows($result);
                 $pages = ceil($total/$halaman);
-                if(isset($_GET['id_kat'])){
+                if(get('id_kat')){
                     $buku = "SELECT id_berita, judul_berita, foto FROM berita ORDER BY id_berita DESC LIMIT $mulai, $halaman";
                 }
                 else    
@@ -82,29 +82,29 @@
             ?>
             <div class="pagination-wrap">           
               <nav class="pagination right clear">
-                <?php if(isset($_GET['id_berita'])) { if($page == 1) echo ""; else {?>
-                    <a href="?p=berita&id_berita=<?php echo $_GET['id_berita']; ?>&halaman=1"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="?p=berita&id_berita=<?php echo $_GET['id_berita']; ?>&halaman=<?php echo $_GET['halaman']-1; ?>"><i class="fa fa-angle-left"></i></a>
+                <?php if(get('id_berita')) { if($page == 1) echo ""; else {?>
+                    <a href="?p=berita&id_berita=<?php echo get('id_berita'); ?>&halaman=1"><i class="fa fa-angle-double-left"></i></a>
+                    <a href="?p=berita&id_berita=<?php echo get('id_berita'); ?>&halaman=<?php echo get('halaman')-1; ?>"><i class="fa fa-angle-left"></i></a>
                 <?php } } else { if($page == 1) echo ""; else {?>
                     <a href="?p=berita&halaman=1"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="?p=berita&halaman=<?php echo $_GET['halaman']-1; ?>"><i class="fa fa-angle-left"></i></a>
+                    <a href="?p=berita&halaman=<?php echo get('halaman')-1; ?>"><i class="fa fa-angle-left"></i></a>
                 <?php 
                     } }
-                    if(isset($_GET['id_berita'])){ 
+                    if(get('id_berita')){ 
                         for ($i=1; $i<=$pages ; $i++){
                 ?>
-                    <a href="?p=berita&id_berita=<?php echo $_GET['id_berita']; ?>&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
+                    <a href="?p=berita&id_berita=<?php echo get('id_berita'); ?>&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
                 <?php } } else { 
                     for ($i=1; $i<=$pages ; $i++){
                 ?>
                     <a href="?p=berita&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
                 <?php } } ?>
 
-                <?php if(isset($_GET['id_berita'])) { if($page == $pages) echo ""; else {?>
-                    <a href="?p=berita&id_berita=<?php echo $_GET['id_berita']; ?>&halaman=<?php echo $_GET['halaman']+1; ?>"><i class="fa fa-angle-right"></i></a>
-                    <a href="?p=berita&id_berita<?php echo $_GET['id_berita']; ?>&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
+                <?php if(get('id_berita')) { if($page == $pages) echo ""; else {?>
+                    <a href="?p=berita&id_berita=<?php echo get('id_berita'); ?>&halaman=<?php echo get('halaman')+1; ?>"><i class="fa fa-angle-right"></i></a>
+                    <a href="?p=berita&id_berita<?php echo get('id_berita'); ?>&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
                 <?php } } else { if($page == $pages) echo ""; else {?>
-                    <a href="?p=berita&halaman=<?php echo $_GET['halaman']+1; ?>"><i class="fa fa-angle-right"></i></a>
+                    <a href="?p=berita&halaman=<?php echo get('halaman')+1; ?>"><i class="fa fa-angle-right"></i></a>
                     <a href="?p=berita&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
                 <?php } } ?>
               </nav>
