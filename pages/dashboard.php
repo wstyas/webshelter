@@ -25,7 +25,7 @@
             <p></p>
             <h3 data-aos="fade-up">&nbsp;</h3>
             <p data-aos="fade-up">
-              <?php $this(htmlspecialchars_decode(stripcslashes($row['isi_profil']))); ?>
+              <?php $this(($row['isi_profil'])); ?>
             </p>
           </div>
         </div>
