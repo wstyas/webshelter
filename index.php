@@ -44,7 +44,7 @@
     <?php
         include "inc/navbar.php";
         if(get("p")) {
-            $page = "pages/".$_GET["p"].".php";
+            $page = "pages/".get["p"].".php";
             if(is_file($page)) {
                 include($page);
             } else {
@@ -63,8 +63,8 @@
   <script type="text/javascript" src="js/plugins.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <?php
-    if(isset($_GET['p'])){
-      $hal = $_GET['p'];
+    if(isset(get['p'])){
+      $hal = get['p'];
       if($hal=='berita_detail'){
   ?>
   <script type="text/javascript" src="js/tinymce/jquery.tinymce.min.js"></script>
