@@ -1,10 +1,10 @@
 <?php
    $id_berita = get('id_berita');
     $queryProduct = "SELECT * FROM berita  WHERE id_berita = " . get('id_berita') . " ORDER BY id_berita DESC LIMIT 1";
-    $rsProduct = mysqli_query($konek, $queryProduct);
+    $rsProduct = mysqli->query($konek, $queryProduct);
     $row = mysqli_fetch_assoc($rsProduct);
   //  $queryKomentar = "SELECT * FROM tb_komentar WHERE id_buku=$id_buku ORDER BY id_komentar DESC";
-   // $rsKomentar = mysqli_query($konek, $queryKomentar);
+   // $rsKomentar = mysqli->query($konek, $queryKomentar);
 ?>
 <!-- Breadcrumbs -->
     <div class="container">
