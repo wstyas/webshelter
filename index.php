@@ -1,6 +1,6 @@
 index.php
 <?php 
-  include('lib/koneksi.php');
+  set_include_path("lib/koneksi.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,18 +43,18 @@ index.php
 
   <main class="content-wrapper oh">
     <?php
-        include("inc/navbar.php");
+        include "inc/navbar.php";
         if(get("p")) {
             $page = "pages/".get["p"].".php";
             if(is_file($page)) {
                 include($page);
             } else {
-                include("pages/404.php");
+                include "pages/404.php";
             }
         } else {
-            include("pages/dashboard.php");
+            include "pages/dashboard.php";
         }
-        include("inc/footer.php");
+        include "inc/footer.php";
     ?>  
   </main> <!-- end main container -->
 
