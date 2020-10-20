@@ -1,6 +1,6 @@
 <?php
 $queryProduct = "SELECT * FROM kontak";
-    $rsProduct = mysqli_query($konek, $queryProduct);
+    $rsProduct = mysqli->query($konek, $queryProduct);
     $row = mysqli_fetch_assoc($rsProduct);
 ?>
 <!-- Footer Type-1 -->
