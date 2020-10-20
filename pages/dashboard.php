@@ -25,7 +25,7 @@
             <p></p>
             <h3 data-aos="fade-up">&nbsp;</h3>
             <p data-aos="fade-up">
-              <?php print_r(htmlspecialchars_decode(stripcslashes($row['isi_profil']))); ?>
+              <?php $this(htmlspecialchars_decode(stripcslashes($row['isi_profil']))); ?>
             </p>
           </div>
         </div>
@@ -49,14 +49,14 @@
               <div class="product-item">
                 <div class="product-img">
                   <a href="#">
-                    <img src="admins/uploads/berita/<?php print_r($row->$foto); ?>" alt="" style="height:300px; width:300px;">
-                    <img src="admins/uploads/berita/<?php print_r($row->$foto); ?>" alt="" class="back-img">
+                    <img src="admins/uploads/berita/<?php $this($row->$foto); ?>" alt="" style="height:300px; width:300px;">
+                    <img src="admins/uploads/berita/<?php $this($row->$foto); ?>" alt="" class="back-img">
                   </a>
-                  <a href="?p=berita_detail&id_berita=<?php print_r($row->$id_berita); ?>" class="product-quickview">Lihat Selengkapnya</a>
+                  <a href="?p=berita_detail&id_berita=<?php $this($row->$id_berita); ?>" class="product-quickview">Lihat Selengkapnya</a>
                 </div>
                 <div class="product-details">
                   <h3>
-                    <a class="product-title" href="?p=berita_detail&id_berita=<?php print_r($row->$id_berita); ?>"><b><?php print_r(substr($row['judul_berita']), 0, 35); if(strlen($row['judul_berita'])>35) print_r("...") ?></b></a>
+                    <a class="product-title" href="?p=berita_detail&id_berita=<?php $this($row->$id_berita); ?>"><b><?php $this(substr($row['judul_berita']), 0, 35); if(strlen($row['judul_berita'])>35) $this("...") ?></b></a>
                   </h3>
                 </div>
               </div>
@@ -83,12 +83,12 @@
               <div class="product-item">
                 <div class="product-img">
                   <a href="#">
-                    <img src="admins/uploads/galeri/<?php print_r($row->$foto); ?>" alt="" style="height:300px; width:300px;">
-                    <img src="admins/uploads/galeri/<?php print_r($row->$foto); ?>" alt="" class="back-img">
+                    <img src="admins/uploads/galeri/<?php $this($row->$foto); ?>" alt="" style="height:300px; width:300px;">
+                    <img src="admins/uploads/galeri/<?php $this($row->$foto); ?>" alt="" class="back-img">
                   </a>
                 </div>
                 <div class="product-details">
-                  <h3 class="product-title" href="?p=berita_detail&id_berita=<?php print_r($row->$id_foto); ?>"><b><?php print_r($row->$keterangan_foto); ?></b>
+                  <h3 class="product-title" href="?p=berita_detail&id_berita=<?php $this($row->$id_foto); ?>"><b><?php $this($row->$keterangan_foto); ?></b>
                   </h3>
                 </div>
               </div>
@@ -116,12 +116,12 @@
               <div class="product-item">
                 <div class="product-img">
                   <a href="#">
-                    <img src="admins/uploads/partner/<?php print_r($row->$foto); ?>" alt="" style="height:300px; width:300px;">
-                    <img src="admins/uploads/partner/<?php print_r($row->$foto); ?>" alt="" class="back-img">
+                    <img src="admins/uploads/partner/<?php $this($row->$foto); ?>" alt="" style="height:300px; width:300px;">
+                    <img src="admins/uploads/partner/<?php $this($row->$foto); ?>" alt="" class="back-img">
                   </a>
                 </div>
                 <div class="product-details">
-                  <h3 class="product-title" href="?p=berita_detail&id_berita=<?php print_r($row->$id_foto); ?>"><b><?php print_r($row->$nama_partner); ?></b>
+                  <h3 class="product-title" href="?p=berita_detail&id_berita=<?php $this($row->$id_foto); ?>"><b><?php $this($row->$nama_partner); ?></b>
                   </h3>
                 </div>
               </div>
