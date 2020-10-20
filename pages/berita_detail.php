@@ -1,6 +1,6 @@
 <?php
-   $id_berita = $_GET['id_berita'];
-    $queryProduct = "SELECT * FROM berita  WHERE id_berita = " . $_GET['id_berita'] . " ORDER BY id_berita DESC LIMIT 1";
+   $id_berita = get('id_berita');
+    $queryProduct = "SELECT * FROM berita  WHERE id_berita = " . get('id_berita') . " ORDER BY id_berita DESC LIMIT 1";
     $rsProduct = mysqli_query($konek, $queryProduct);
     $row = mysqli_fetch_assoc($rsProduct);
   //  $queryKomentar = "SELECT * FROM tb_komentar WHERE id_buku=$id_buku ORDER BY id_komentar DESC";
