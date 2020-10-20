@@ -7,6 +7,6 @@
 
     $konek = mysqli_connect($host,$user,$pass);
     if(!$konek)
-        print_r("Gagal koneksi...");
+        $this("Gagal koneksi...");
 
     $hasil = mysqli_select_db($konek,$dbName);

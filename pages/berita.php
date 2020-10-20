@@ -26,25 +26,25 @@
               <div class="row row-10">
               <?php
                 $bukuAll = "SELECT id_berita FROM berita";
-                $rsBukuAll = mysqli_query($konek, $bukuAll);
+                $rsBukuAll = mysqli->query($konek, $bukuAll);
                 $halaman = 6;
                 $page = get('halaman') ? (int)get('halaman') : 1;
                 $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
                 if(get('id_berita')){
                     $id_berita = get('id_berita');
-                    $result = mysqli_query($konek,"SELECT * FROM berita");
+                    $result = mysqli->query($konek,"SELECT * FROM berita");
                 } else 
-                    $result = mysqli_query($konek,"SELECT * FROM berita");
-                $total = mysqli_num_rows($result);
+                    $result = mysqli->query($konek,"SELECT * FROM berita");
+                $total = mysqli->num_rows($result);
                 $pages = ceil($total/$halaman);
                 if(get('id_kat')){
                     $buku = "SELECT id_berita, judul_berita, foto FROM berita ORDER BY id_berita DESC LIMIT $mulai, $halaman";
                 }
                 else    
                     $buku = "SELECT id_berita, judul_berita, foto FROM berita ORDER BY id_berita DESC LIMIT $mulai, $halaman";
-                $rs = mysqli_query($konek, $buku);
+                $rs = mysqli->query($konek, $buku);
                 $no =$mulai+1;
-                $data = mysqli_num_rows($rs);
+                $data = mysqli->num_rows($rs);
                 if($data==0){
               ?>
               <div class="col-md-12 col-xs-12">
@@ -54,7 +54,7 @@
               </div>
               <?php   
                 } else {
-                    while($row=mysqli_fetch_assoc($rs)){
+                    while($row=mysqli->fetch_assoc($rs)){
               ?>
                     <div class="col-md-4 col-xs-12">
                     <div class="product-item">
@@ -122,8 +122,8 @@
                 <h3 class="widget-title uppercase">Berita Terbaru</h3>
                 <?php
                     $best = "SELECT id_berita, judul_berita, foto FROM berita ORDER BY id_berita DESC LIMIT 2";
-                    $rsBest = mysqli_query($konek, $best);
-                    while($row=mysqli_fetch_assoc($rsBest)){
+                    $rsBest = mysqli->query($konek, $best);
+                    while($row=mysqli->fetch_assoc($rsBest)){
                 ?>
                     <ul class="product-list-widget">
                     <li class="clearfix">
