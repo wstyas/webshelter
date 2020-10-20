@@ -48,7 +48,7 @@
                         </a>
                         </div>
                              <div class="product-details">
-                        <h3 title="<?php $row->$nama_partner; ?>" class="product-title" href="?p=partner_detail&id_partner=<?php print_r($row->$id_partner); ?>"><b><?php echo substr($row->$nama_partner, 0, 35); if(strlen($row->$nama_partner)>35) echo  "..." ?></b>
+                        <h3 title="<?php $row->$nama_partner; ?>" class="product-title" href="?p=partner_detail&id_partner=<?php print_r($row->$id_partner); ?>"><b><?php print_r(substr($row->$nama_partner, 0, 35)); if(strlen($row->$nama_partner)>35) print_r("...") ?></b>
                         </h3>
                         </div>
                     </div>
@@ -63,30 +63,30 @@
             ?>
             <div class="pagination-wrap">           
               <nav class="pagination right clear">
-                <?php if(get('id_partner')) { if($page == 1) echo ""; else {?>
-                    <a href="?p=partner&id_partner=<?php echo get('id_partner'); ?>&halaman=1"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="?p=partner&id_partner=<?php echo get('id_partner'); ?>&halaman=<?php echo get('halaman')-1; ?>"><i class="fa fa-angle-left"></i></a>
-                <?php } } else { if($page == 1) echo ""; else {?>
+                <?php if(get('id_partner')) { if($page == 1) print_r(""); else {?>
+                    <a href="?p=partner&id_partner=<?php print_r(get('id_partner')); ?>&halaman=1"><i class="fa fa-angle-double-left"></i></a>
+                    <a href="?p=partner&id_partner=<?php print_r(get('id_partner')); ?>&halaman=<?php print_r(get('halaman')-1); ?>"><i class="fa fa-angle-left"></i></a>
+                <?php } } else { if($page == 1) print_r(""); else {?>
                     <a href="?p=partner&halaman=1"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="?p=partner&halaman=<?php echo get('halaman')-1; ?>"><i class="fa fa-angle-left"></i></a>
+                    <a href="?p=partner&halaman=<?php print_r(get('halaman')-1); ?>"><i class="fa fa-angle-left"></i></a>
                 <?php 
                     } }
                     if(get('id_partner')){ 
                         for ($i=1; $i<=$pages ; $i++){
                 ?>
-                    <a href="?p=partner&id_partner=<?php echo get('id_partner'); ?>&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
+                    <a href="?p=partner&id_partner=<?php print_r(get('id_partner')); ?>&halaman=<?php print_r($i); ?>" class="<?php if($i==$page) print_r('page-numbers current'); ?>"><?php print_r($i); ?></a>
                 <?php } } else { 
                     for ($i=1; $i<=$pages ; $i++){
                 ?>
-                    <a href="?p=partner&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
+                    <a href="?p=partner&halaman=<?php  print_r($i); ?>" class="<?php if($i==$page) print_r('page-numbers current'); ?>"><?php print_r($i); ?></a>
                 <?php } } ?>
 
-                <?php if(isset(get('id_partner'))) { if($page == $pages) echo ""; else {?>
-                    <a href="?p=partner&id_partner=<?php echo get('id_partner'); ?>&halaman=<?php echo get('halaman')+1; ?>"><i class="fa fa-angle-right"></i></a>
-                    <a href="?p=partner&id_partner<?php echo get('id_partner'); ?>&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
-                <?php } } else { if($page == $pages) echo ""; else {?>
-                    <a href="?p=partner&halaman=<?php echo get('halaman')+1; ?>"><i class="fa fa-angle-right"></i></a>
-                    <a href="?p=partner&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
+                <?php if(isset(get('id_partner'))) { if($page == $pages) print_r(""); else {?>
+                    <a href="?p=partner&id_partner=<?php print_r(get('id_partner')); ?>&halaman=<?php print_r(get('halaman')+1); ?>"><i class="fa fa-angle-right"></i></a>
+                    <a href="?p=partner&id_partner<?php print_r(get('id_partner')); ?>&halaman=<?php print_r($pages); ?>"><i class="fa fa-angle-double-right"></i></a>
+                <?php } } else { if($page == $pages) print_r(""); else {?>
+                    <a href="?p=partner&halaman=<?php print_r(get('halaman')+1); ?>"><i class="fa fa-angle-right"></i></a>
+                    <a href="?p=partner&halaman=<?php print_r($pages); ?>"><i class="fa fa-angle-double-right"></i></a>
                 <?php } } ?>
               </nav>
             </div>
