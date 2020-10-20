@@ -43,18 +43,18 @@ index.php
 
   <main class="content-wrapper oh">
     <?php
-        include "inc/navbar.php";
+        set_include_path("inc/navbar.php");
         if(get("p")) {
             $page = "pages/".get["p"].".php";
             if(is_file($page)) {
-                include($page);
+                set_include_path($page);
             } else {
-                include "pages/404.php";
+                set_include_path("pages/404.php");
             }
         } else {
-            include "pages/dashboard.php";
+            set_include_path("pages/dashboard.php");
         }
-        include "inc/footer.php";
+        set_include_path("inc/footer.php");
     ?>  
   </main> <!-- end main container -->
 
