@@ -29,14 +29,14 @@ $queryProduct = "SELECT * FROM kontak";
 
             <div class="address-wrap">
               <h4 class="uppercase">Alamat</h4>
-              <address class="address"> <?php echo $row['alamat']; ?></address>
+              <address class="address"> <?php print_r($row->$alamat); ?></address>
             </div>
 
             <h4 class="uppercase">Informasi Kontak</h4>
             <ul class="contact-info-list">
-              <li><span>WhatsApp: </span><a><?php echo $row['whatsapp']; ?></a></li>
-              <li><span>E-mail: </span><a class="sliding-link"> <?php echo $row['email']; ?></a></li>
-              <li><span>Facebook: </span><a> <?php echo $row['facebook']; ?></a></li>
+              <li><span>WhatsApp: </span><a><?php print_r($row->$whatsapp); ?></a></li>
+              <li><span>E-mail: </span><a class="sliding-link"> <?php print_r($row->$email); ?></a></li>
+              <li><span>Facebook: </span><a> <?php print_r($row->$facebook); ?></a></li>
             </ul>
 
           </div>          
