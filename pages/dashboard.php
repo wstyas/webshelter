@@ -25,7 +25,7 @@
             <p></p>
             <h3 data-aos="fade-up">&nbsp;</h3>
             <p data-aos="fade-up">
-              <?php echo htmlspecialchars_decode(stripcslashes($row['isi_profil'])); ?>
+              <?php print_r(htmlspecialchars_decode(stripcslashes($row['isi_profil']))); ?>
             </p>
           </div>
         </div>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="product-details">
                   <h3>
-                    <a class="product-title" href="?p=berita_detail&id_berita=<?php print_r($row->$id_berita); ?>"><b><?php echo substr($row['judul_berita'], 0, 35); if(strlen($row['judul_berita'])>35) echo  "..." ?></b></a>
+                    <a class="product-title" href="?p=berita_detail&id_berita=<?php print_r($row->$id_berita); ?>"><b><?php print_r(substr($row['judul_berita']), 0, 35); if(strlen($row['judul_berita'])>35) print_r("...") ?></b></a>
                   </h3>
                 </div>
               </div>
