@@ -43,7 +43,7 @@
   <main class="content-wrapper oh">
     <?php
         include "inc/navbar.php";
-        if(isset($_GET["p"])) {
+        if(get("p")) {
             $page = "pages/".$_GET["p"].".php";
             if(is_file($page)) {
                 include($page);
