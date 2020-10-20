@@ -1,9 +1,9 @@
 <?php
     include "koneksi.php";
-    if(isset($_POST['komentar'])){
-        $id_buku=$_POST['id_buku'];
-        $nama=mysqli_real_escape_string($konek, $_POST['nama']);
-        $isi=mysqli_real_escape_string($konek, $_POST['isi']);
+    if(post('komentar')){
+        $id_buku=post('id_buku');
+        $nama=mysqli_real_escape_string($konek, post('nama'));
+        $isi=mysqli_real_escape_string($konek, post('isi'));
         $tgl=date("Y-m-d H:i:s");
 
         $query = "INSERT INTO tb_komentar VALUES(NULL, $id_buku, '$nama', '$isi', 0, '$tgl')";
@@ -12,6 +12,6 @@
             header('location: ../index.php?p=buku_detail&id_buku='.$id_buku.'&a=komentar_sukses');
         else
             header('location: ../index.php?p=buku_detail&id_buku='.$id_buku.'&a=komentar_gagal');
-            // echo "Gagal";
+            // print_r("Gagal");
 
     }
