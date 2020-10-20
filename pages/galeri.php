@@ -12,16 +12,16 @@
                 $bukuAll = "SELECT id_foto FROM galeri";
                 $rsBukuAll = mysqli_query($konek, $bukuAll);
                 $halaman = 6;
-                $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
+                $page = get('halaman') ? (int)get('halaman') : 1;
                 $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
-                if(isset($_GET['id_foto'])){
-                    $id_foto = $_GET['id_foto'];
+                if(get('id_foto')){
+                    $id_foto = get('id_foto');
                     $result = mysqli_query($konek,"SELECT * FROM galeri");
                 } else 
                     $result = mysqli_query($konek,"SELECT * FROM galeri");
                 $total = mysqli_num_rows($result);
                 $pages = ceil($total/$halaman);
-                if(isset($_GET['id_foto'])){
+                if(get('id_foto')){
                     $buku = "SELECT id_foto, keterangan_foto, foto FROM galeri ORDER BY id_foto DESC LIMIT $mulai, $halaman";
                 }
                 else    
@@ -44,12 +44,12 @@
                     <div class="product-item">
                         <div class="product-img">
                         <a href="#">
-                            <img src="admins/uploads/galeri/<?php echo $row['foto']; ?>" alt="" style="height:350px; width: auto;">
-                            <img src="admins/uploads/galeri/<?php echo $row['foto']; ?>" alt="" class="back-img">
+                            <img src="admins/uploads/galeri/<?php print_r($row->$foto); ?>" alt="" style="height:350px; width: auto;">
+                            <img src="admins/uploads/galeri/<?php print_r($row->$foto); ?>" alt="" class="back-img">
                         </a>
                         </div>
                              <div class="product-details">
-                        <h3 title="<?php $row['keterangan_foto']; ?>" class="product-title" href="?p=berita_detail&id_foto=<?php echo $row['id_foto']; ?>"><b><?php echo substr($row['keterangan_foto'], 0, 35); if(strlen($row['keterangan_foto'])>35) echo  "..." ?></b>
+                        <h3 title="<?php $row['keterangan_foto']; ?>" class="product-title" href="?p=berita_detail&id_foto=<?php print_r($row->$id_foto); ?>"><b><?php echo substr($row['keterangan_foto'], 0, 35); if(strlen($row['keterangan_foto'])>35) echo  "..." ?></b>
                         </h3>
                         </div>
                     </div>
@@ -64,29 +64,29 @@
             ?>
             <div class="pagination-wrap">           
               <nav class="pagination right clear">
-                <?php if(isset($_GET['id_foto'])) { if($page == 1) echo ""; else {?>
-                    <a href="?p=galeri&id_foto=<?php echo $_GET['id_foto']; ?>&halaman=1"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="?p=galeri&id_foto=<?php echo $_GET['id_foto']; ?>&halaman=<?php echo $_GET['halaman']-1; ?>"><i class="fa fa-angle-left"></i></a>
+                <?php if(get('id_foto')) { if($page == 1) echo ""; else {?>
+                    <a href="?p=galeri&id_foto=<?php echo get('id_foto'); ?>&halaman=1"><i class="fa fa-angle-double-left"></i></a>
+                    <a href="?p=galeri&id_foto=<?php echo get('id_foto'); ?>&halaman=<?php echo get('halaman')-1; ?>"><i class="fa fa-angle-left"></i></a>
                 <?php } } else { if($page == 1) echo ""; else {?>
                     <a href="?p=galeri&halaman=1"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="?p=galeri&halaman=<?php echo $_GET['halaman']-1; ?>"><i class="fa fa-angle-left"></i></a>
+                    <a href="?p=galeri&halaman=<?php echo get('halaman')-1; ?>"><i class="fa fa-angle-left"></i></a>
                 <?php 
                     } }
-                    if(isset($_GET['id_foto'])){ 
+                    if(get('id_foto')){ 
                         for ($i=1; $i<=$pages ; $i++){
                 ?>
-                    <a href="?p=galeri&id_foto=<?php echo $_GET['id_foto']; ?>&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
+                    <a href="?p=galeri&id_foto=<?php echo get('id_foto'); ?>&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
                 <?php } } else { 
                     for ($i=1; $i<=$pages ; $i++){
                 ?>
                     <a href="?p=galeri&halaman=<?php echo $i; ?>" class="<?php if($i==$page) echo 'page-numbers current'; ?>"><?php echo $i; ?></a>
                 <?php } } ?>
 
-                <?php if(isset($_GET['id_foto'])) { if($page == $pages) echo ""; else {?>
-                    <a href="?p=galeri&id_foto=<?php echo $_GET['id_foto']; ?>&halaman=<?php echo $_GET['halaman']+1; ?>"><i class="fa fa-angle-right"></i></a>
-                    <a href="?p=galeri&id_foto<?php echo $_GET['id_foto']; ?>&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
+                <?php if(get('id_foto')) { if($page == $pages) echo ""; else {?>
+                    <a href="?p=galeri&id_foto=<?php echo get('id_foto'); ?>&halaman=<?php echo get('halaman')+1; ?>"><i class="fa fa-angle-right"></i></a>
+                    <a href="?p=galeri&id_foto<?php echo get('id_foto'); ?>&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
                 <?php } } else { if($page == $pages) echo ""; else {?>
-                    <a href="?p=galeri&halaman=<?php echo $_GET['halaman']+1; ?>"><i class="fa fa-angle-right"></i></a>
+                    <a href="?p=galeri&halaman=<?php echo get('halaman')+1; ?>"><i class="fa fa-angle-right"></i></a>
                     <a href="?p=galeri&halaman=<?php echo $pages; ?>"><i class="fa fa-angle-double-right"></i></a>
                 <?php } } ?>
               </nav>
