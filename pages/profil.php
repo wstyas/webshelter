@@ -13,7 +13,7 @@
           <div class="col-sm-8">
             <h4 class="about-intro uppercase">PT. Shelter</h4>
             <p align="justify">
-                            <?php echo htmlspecialchars_decode(stripcslashes($row->$profil)); ?>
+                            <?php print_r(htmlspecialchars_decode(stripcslashes($row->$profil))); ?>
                         </p>
           </div>
                     <div class="col-xl-2 col-lg-3" data-aos="fade-left">
